@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Tommaso Branduardi",
+        "address": "Via Villa San Giovanni 170, 80146 Napoli, Italia",
+        "animals": "Dogs",
+        "price" : "5",
+        "rating" : "3.4",
+        "reviews" : 87,
+        "coordinates": {
+            "longitude": 14.30634,
+            "latitude": 40.83635
+        },
+        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "imageName": "preview_profile",
+        "id" : 1001
+    },
+    {
+        "name": "Hirbod Coppola",
+        "address": "Napoli",
+        "animals": "Dogs",
+        "price" : "5",
+        "rating" : "3.2",
+        "reviews" : 34,
+        "coordinates": {
+            "longitude": 14.30736,
+            "latitude": 40.83630
+        },
+        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "imageName": "preview_profile",
+        "id" : 1002
+    },
+    {
+        "name": "Nicola Coppola",
+        "address": "Napoli",
+        "animals": "Dogs",
+        "price" : "5",
+        "rating" : "5.0",
+        "reviews" : 21,
+        "coordinates": {
+            "longitude": 14.30967,
+            "latitude": 40.83359
+        },
+        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "imageName": "preview_profile",
+        "id" : 1003
+    },
+    {
+        "name": "Carmine Fico",
+        "address": "Napoli",
+        "animals": "Dogs",
+        "price" : "5",
+        "rating" : "3.9",
+        "reviews" : 8,
+        "coordinates": {
+            "longitude": 14.30789,
+            "latitude": 40.83850
+        },
+        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "imageName": "preview_profile",
+        "id" : 1004
+    }
+]
+    
