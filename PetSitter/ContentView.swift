@@ -23,6 +23,7 @@ struct ContentView: View {
                     Label("Chat", systemImage: "message.fill")
                 }.tag(3)
         }
+        .accentColor(Color.arancione)
     }
 }
 

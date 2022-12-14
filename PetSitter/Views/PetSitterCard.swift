@@ -11,34 +11,51 @@ import SwiftUI
 struct PetSitterCard: View {
     var sitter: petSitter
     var body: some View {
-        HStack {
-            Image("\(sitter.imageName)")
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 120, height: 120)
-            VStack (alignment: .leading, spacing: 10) {
-                Text(sitter.name)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                HStack(spacing: 15) {
-                    Text("Rating: \(sitter.rating)")
-                        .font(.caption)
-                    Text("\(sitter.reviews) reviews")
-                        .font(.caption)
+        //GeometryReader { geometry in
+            HStack {
+                Image("\(sitter.imageName)")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 80,
+                           height: 80,
+                           alignment: .center)
+                    .clipped()
+                    .cornerRadius(22)
+                VStack (alignment: .leading) {
+                    Text(sitter.name)
+                        .font(.system(size: 17, weight: .bold))
+                    HStack {
+                        Text("\(sitter.rating)")
+                            .font(.system(size: 12, weight: .bold))
+
+                        Text("\(sitter.reviews)")
+                            .font(.system(size: 12, weight: .regular))
+                    }
+                    HStack{
+                        Text("1.6 km")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("from you")
+                            .font(.system(size: 12, weight: .regular))
+                    }
+                    HStack {
+                        Text("For:")
+                            .font(.system(size: 12, weight: .bold))
+
+                        Text("\(sitter.animals)")
+                            .font(.system(size: 12, weight: .regular))
+
+                    }
+                    
                 }
-                Text("1.6 km from you")
-                    .font(.caption2)
-                    .padding(.top, 3)
-                Text("For: \(sitter.animals)")
-                    .font(.caption2)
-                    .padding(.top, 3)
+                Spacer()
+                /*Image(systemName: "chevron.right")
+                    .font(.system(size: 20,weight: .regular))
+                    .foregroundColor(Color.arancione)*/
+                   
             }
-            Spacer()
-        }
-        .frame(width: 350, height: 140)
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
+            .fontDesign(.rounded)
+        //}
+            //.padding(.horizontal)
     }
 }
 

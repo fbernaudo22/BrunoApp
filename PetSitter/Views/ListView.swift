@@ -16,9 +16,9 @@ struct ListView: View {
     var filteredItems: [petSitter] {
         if search.isEmpty {
             return modelData.petsitters}
-            else {
-                return modelData.petsitters.filter {$0.name.localizedCaseInsensitiveContains(search) || $0.rating.localizedCaseInsensitiveContains(search) || $0.animals.localizedCaseInsensitiveContains(search)}
-            }
+        else {
+            return modelData.petsitters.filter {$0.name.localizedCaseInsensitiveContains(search) || $0.rating.localizedCaseInsensitiveContains(search) || $0.animals.localizedCaseInsensitiveContains(search)}
+        }
     }
     var body: some View {
         NavigationStack{
@@ -31,14 +31,24 @@ struct ListView: View {
                             Text(option)
                         }
                     }
+                    
                 }
-                ScrollView {
+                
+                .padding(.horizontal)
+                List {
                     ForEach(filteredItems) { sitter in
-                        PetSitterCard(sitter: sitter)
+                        NavigationLink {
+                            PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
+                        } label: {
+                            PetSitterCard(sitter: sitter)
+                        }
+                        
                     }
-                }.searchable(text: $search)
+                }
+                .searchable(text: $search)
+                .listStyle(PlainListStyle())
             }
-            .padding()
+            //.padding()
             .navigationTitle("Dashboard")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
@@ -48,7 +58,6 @@ struct ListView: View {
                         .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
-                        .shadow(radius: 2)
                         .frame(width: 50, height: 50)
                 })}
                             
