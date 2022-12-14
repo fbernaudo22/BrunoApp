@@ -8,13 +8,44 @@
 import SwiftUI
 
 struct ProfileView: View {
+    var user: User
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Form {
+                Section{
+                    VStack{
+                        Image(user.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                        Text(user.username)
+                    }
+                }
+                Section("Account "){
+                    NavigationLink("Messages", destination: ChatView())
+                    NavigationLink("Notifications", destination: ChatView())
+                    NavigationLink("Password", destination: ChatView())
+                    
+                }
+                Section("Support"){
+                    NavigationLink("Instructions", destination: ChatView())
+                    NavigationLink("Privacy policy", destination: ChatView())
+                    NavigationLink("Terms and conditions", destination: ChatView())
+                    NavigationLink("FAQ", destination: ChatView())
+                    
+                }
+                Section{
+                    NavigationLink("Delete account", destination: ChatView())
+                }
+            }
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
+    static let modelData = ModelData()
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: modelData.user)
+            .environmentObject(ModelData())
     }
 }
