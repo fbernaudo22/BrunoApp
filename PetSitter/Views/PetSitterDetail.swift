@@ -13,52 +13,64 @@ struct PetSitterDetail: View {
     var sitter: petSitter
     @State var region: MKCoordinateRegion
     var body: some View {
-        VStack {
-            HStack{
-                Spacer()
-                Image(sitter.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                Spacer()
-                VStack(spacing: 5){
-                    Text(sitter.name)
-                        .font(.title)
-                        .fontWeight(.semibold)
-                    Text("Rating: \(sitter.rating)")
-                    Text("\(sitter.reviews) Reviews")
-                }
-                Spacer()
-            }
-            VStack{
-                Button(action: {print("Button Tap")},
-                       label: {
-                    Text ("Send a Message")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .padding(.horizontal, 40.0)
-                        .background(Color                  .black.opacity(0.8))
-                        .cornerRadius(10)
-                })
-                Text(sitter.description)
-                    .padding(10)
-                HStack {
-                    Text("For: \(sitter.animals)")
-                }
-                Map(coordinateRegion: $region, annotationItems: modelData.petsitters) {sit in
-                    MapMarker(coordinate: sitter.locationCoordinates)
+        GeometryReader { geometry in
+            VStack {
+                HStack{
+                    Spacer()
+                    Image(sitter.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width * 0.40, height: geometry.size.height * 0.20)
+                        .clipShape(Circle())
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 5){
+                        Text(sitter.name)
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        Text("Rating: \(sitter.rating)")
+                        Text("\(sitter.reviews) Reviews")
                     }
+                    Spacer()
                 }
-                Button {
-                    print("Leaving a review")
-                } label: {
-                    Text("Leave a review")
+                VStack{
+                    Button(action: {print("Button Tap")},
+                           label: {
+                        /*Text ("Send a Message")
+                         .font(.system(size: 14, weight: .medium, design: .rounded))
+                         .foregroundColor(.orange)
+                         .padding(10)
+                         //.cornerRadius(10)
+                         .frame(width: geometry.size.width * 0.50)
+                         .border(Color.orange, width: 2)
+                         .cornerRadius(10)*/
+                        VStack {
+                            Text ("Send a Message")
+                                .font(.system(size: 14, weight: .medium, design: .rounded))
+                                .foregroundColor(.orange)
+                                .padding(10)
+                        }
+                        .frame(width: geometry.size.width * 0.50)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.orange, lineWidth: 2)
+                        )
+                    })
+                    Text ("About me")
+                        .fontWeight(.bold)
+                        .font(.title2)
+                    Text(sitter.description)
+                        .padding()
+                    HStack {
+                        Text("For: \(sitter.animals)")
+                    }
+                    Map(coordinateRegion: $region, annotationItems: modelData.petsitters) {sit in
+                        MapMarker(coordinate: sitter.locationCoordinates)
+                    }
                 }
             }
         }
     }
+}
 
 
 struct PetSitterDetail_Previews: PreviewProvider {
@@ -68,4 +80,4 @@ struct PetSitterDetail_Previews: PreviewProvider {
             .environmentObject(ModelData())
     }
 }
- 
+
