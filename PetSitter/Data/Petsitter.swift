@@ -35,28 +35,39 @@ struct petSitter: Identifiable, Codable, Hashable {
     static func giveStars(rating: String) ->String {
         let dblRating = Double(rating)
         var result: String
+//        var string = NSMutableAttributedString(string: "")
+//        let emptyStarAttachment = NSTextAttachment()
+//        emptyStarA.image = Image(systemName: "star")
+//        let emptyStarString = NSAttributedString(attachment: emptyStarAttachment)
+//        let halfStar = NSTextAttachment()
+//        halfStar.image = Image(systemName: "star.leadinghalf.filled")
+//        let fullStar = NSTextAttachment()
+//        fullStar.image = Image(systemName: "star.fill")
         
         switch(dblRating!){
         case 0...0.4:
-            result = ""
+            result = "􀋂􀋂􀋂􀋂􀋂"
+        
         case 0.5...0.9:
-            result = ""
+            result = "􀋄􀋂􀋂􀋂􀋂"
         case 1.0...1.4:
-            result = ""
+            result = "􀋃􀋂􀋂􀋂􀋂"
         case 1.5...1.9:
-            result = ""
+            result = "􀋃􀋄􀋂􀋂􀋂"
         case 2.0...2.4:
-            result = ""
+            result = "􀋃􀋃􀋂􀋂􀋂"
         case 2.5...2.9:
-            result = ""
+            result = "􀋃􀋃􀋄􀋂􀋂"
         case 3.0...3.4:
-            result = ""
+            result = "􀋃􀋃􀋃􀋂􀋂"
         case 3.5...3.9:
-            result = ""
+            result = "􀋃􀋃􀋃􀋄􀋂"
         case 4.0...4.4:
-            result = ""
-        case 4.5...5.0:
-            result = ""
+            result = "􀋃􀋃􀋃􀋃􀋂"
+        case 4.5...4.9:
+            result = "􀋃􀋃􀋃􀋃􀋄"
+        case 5.0:
+            result = "􀋃􀋃􀋃􀋃􀋃"
         default:
             result = ""
         }

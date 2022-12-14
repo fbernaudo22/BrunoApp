@@ -12,7 +12,7 @@ struct ChatView: View {
     @State private var query = ""
     @State private var isPresented = false
     var body: some View {
-        NavigationView {
+        VStack {
             List {
                 ForEach(filteredSitters) { sitter in
                     CardChatView(sitter: sitter)
@@ -26,7 +26,7 @@ struct ChatView: View {
             }))
         }
         .sheet(isPresented: $isPresented) {
-            HelloWorldView()
+           // HelloWorldView()
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F0E423294A3F7B00FA78D3 /* myColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F0E422294A3F7B00FA78D3 /* myColorAsset.swift */; };
 		68367CCE29478F9C00527397 /* PetSitterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CCD29478F9C00527397 /* PetSitterDetail.swift */; };
 		68367CD02947945400527397 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CCF2947945400527397 /* ProfileView.swift */; };
 		68367CD22948B9AF00527397 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CD12948B9AF00527397 /* User.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13F0E422294A3F7B00FA78D3 /* myColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myColorAsset.swift; sourceTree = "<group>"; };
 		68367CCD29478F9C00527397 /* PetSitterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSitterDetail.swift; sourceTree = "<group>"; };
 		68367CCF2947945400527397 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		68367CD12948B9AF00527397 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				68B6512F2945174E0070E140 /* Data */,
 				68B650FF294516DC0070E140 /* PetSitterApp.swift */,
 				6854C01C29462D84007670A6 /* ContentView.swift */,
+				13F0E422294A3F7B00FA78D3 /* myColorAsset.swift */,
 				68B6513A294517650070E140 /* Views */,
 				68B65103294516DD0070E140 /* Assets.xcassets */,
 				68B65105294516DD0070E140 /* Preview Content */,
@@ -334,6 +337,7 @@
 				68367CD22948B9AF00527397 /* User.swift in Sources */,
 				68B65140294517650070E140 /* ChatView.swift in Sources */,
 				68B651392945174E0070E140 /* LocationManager.swift in Sources */,
+				13F0E423294A3F7B00FA78D3 /* myColorAsset.swift in Sources */,
 				68367CD42948BE0600527397 /* CardChatView.swift in Sources */,
 				68B651382945174E0070E140 /* SearchService.swift in Sources */,
 				68B6512E294517320070E140 /* PetSitterCard.swift in Sources */,
