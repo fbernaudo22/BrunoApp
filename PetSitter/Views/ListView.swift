@@ -37,43 +37,39 @@ struct ListView: View {
                         ForEach(filteredItems) { sitter in
                             NavigationLink(destination: PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))), label:{PetSitterCard(sitter: sitter)
                             })
-                        }.searchable(text: $search)
+                        }
+                        .searchable(text: $search)
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 VStack{
                     Spacer()
-                    HStack{
+                    VStack{
                         Spacer()
                         NavigationLink(destination: MapView(), label: {
-                            Image(systemName: "map.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
+                            MapButtonView()
                         })
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(Circle())
-                        .padding(.horizontal)
                     }
                 }
-                }
-                .navigationTitle("Dashboard")
-                .navigationBarTitleDisplayMode(.automatic)
-                .toolbar {
-                    ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(),
-                                                                                   label: {
-                        Image("preview_profile")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .shadow(radius: 2)
-                            .frame(width: 50, height: 50)
-                    })}
-                                
-                    )}
-                .navigationBarBackButtonHidden()
             }
+            .navigationTitle("Dashboard")
+            .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(),
+                                                                              label: {
+                    Image("preview_profile")
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .shadow(radius: 2)
+                        .frame(width: 50, height: 50)
+                })}
+                            
+                )}
+            .navigationBarBackButtonHidden()
         }
     }
+}
 
 struct ListView_Previews: PreviewProvider {
     static let modelData = ModelData()
