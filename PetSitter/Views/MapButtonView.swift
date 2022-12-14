@@ -10,13 +10,13 @@ import SwiftUI
 struct MapButtonView: View {
     var body: some View {
         NavigationLink(destination: MapView(), label: {
-
             Image(systemName: "map.fill")
                 .font(.headline)
             Text("Map")
                 .fontWeight(.regular)
                 .font(.headline)
         })
+        .navigationBarBackButtonHidden()
         .buttonStyle(.borderless)
         .clipShape(Rectangle())
         .cornerRadius(1)

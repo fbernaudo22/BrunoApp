@@ -182,9 +182,9 @@
 			children = (
 				68B6512D294517320070E140 /* PetSitterCard.swift */,
 				68B6513B294517650070E140 /* ListView.swift */,
+				68B6513C294517650070E140 /* MapView.swift */,
 				85FFCAF8294A17F200AE63DF /* MapButtonView.swift */,
 				85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */,
-				68B6513C294517650070E140 /* MapView.swift */,
 				68B6513D294517650070E140 /* ChatView.swift */,
 				68367CCD29478F9C00527397 /* PetSitterDetail.swift */,
 				68367CCF2947945400527397 /* ProfileView.swift */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListButtonView: View {
     var body: some View {
-        NavigationLink(destination: MapView(), label: {
+        NavigationLink(destination: ListView(), label: {
             
             Image(systemName: "list.bullet")
                 .font(.headline)
@@ -17,6 +17,7 @@ struct ListButtonView: View {
                 .fontWeight(.regular)
                 .font(.headline)
         })
+        .navigationBarBackButtonHidden()
         .buttonStyle(.borderless)
         .clipShape(Rectangle())
         .cornerRadius(1)

@@ -30,18 +30,11 @@ struct MapView: View {
                     }}.ignoresSafeArea()
                 VStack{
                     Spacer()
-                    HStack{
+                    VStack{
                         Spacer()
                         NavigationLink(destination: ListView(), label: {
-                            Image(systemName: "house.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
+                            ListButtonView()
                         })
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(Circle())
-                        .padding(.horizontal)
-                        .navigationBarBackButtonHidden()
                     }
                 }
             }

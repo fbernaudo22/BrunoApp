@@ -23,16 +23,17 @@ struct ListView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                VStack {
+                VStack(alignment: .center) {
                     HStack{
-                        Text("Ordered by:")
+                        Text("Filtered by:")
                         Spacer()
                         Picker("Ordered by:", selection: $selectedItem) {
                             ForEach(pickerOptions, id: \.self) { option in
                                 Text(option)
                             }
-                        }
-                    }.padding(.horizontal)
+                        }.pickerStyle(.automatic)
+                    }
+                    .padding(.horizontal)
                     ScrollView(showsIndicators: false) {
                         ForEach(filteredItems) { sitter in
                             NavigationLink(destination: PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))), label:{PetSitterCard(sitter: sitter)
@@ -42,6 +43,7 @@ struct ListView: View {
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .padding(.horizontal)
                 VStack{
                     Spacer()
                     VStack{
@@ -55,8 +57,8 @@ struct ListView: View {
             .navigationTitle("Dashboard")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
-                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(),
-                                                                              label: {
+                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(user: modelData.user),
+                                                                               label: {
                     Image("preview_profile")
                         .resizable()
                         .scaledToFit()
