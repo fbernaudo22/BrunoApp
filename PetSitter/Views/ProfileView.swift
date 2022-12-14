@@ -43,7 +43,9 @@ struct ProfileView: View {
 }
 
 struct ProfileView_Previews: PreviewProvider {
+    static let modelData = ModelData()
     static var previews: some View {
-        ProfileView(user: User())
+        ProfileView(user: modelData.user)
+            .environmentObject(ModelData())
     }
 }
