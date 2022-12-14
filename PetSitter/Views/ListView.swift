@@ -35,7 +35,7 @@ struct ListView: View {
                 ScrollView {
                     ForEach(filteredItems) { sitter in
                         PetSitterCard(sitter: sitter)
-                    }//.searchable(text: $search)
+                    }
                 }.searchable(text: $search)
             }
             .padding()
