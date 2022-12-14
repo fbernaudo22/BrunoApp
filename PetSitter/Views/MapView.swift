@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    //@Binding var buttonIsActive: Bool
     @EnvironmentObject var modelData: ModelData
     @StateObject private var locationManager = LocationManager()
     var region: Binding<MKCoordinateRegion>? {
@@ -26,9 +27,17 @@ struct MapView: View {
                 Map(coordinateRegion: region!,interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: modelData.petsitters) {location in
                     MapAnnotation(coordinate: location.locationCoordinates) { NavigationLink(destination: PetSitterDetail(sitter: location, region: MKCoordinateRegion(center: location.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))), label: {placeholder(imageName: location.imageName)
                     })
-                    }}
-            }.ignoresSafeArea(edges: .top)
-                .padding(.bottom)
+                    }}.ignoresSafeArea()
+                VStack{
+                    Spacer()
+                    VStack{
+                        Spacer()
+                        NavigationLink(destination: ListView(), label: {
+                            ListButtonView()
+                        })
+                    }
+                }
+            }
         }
         
     }

@@ -58,6 +58,22 @@
         "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
         "imageName": "preview_profile",
         "id" : 1004
+    },
+    {
+        "name": "Carmine Fico",
+        "address": "Napoli",
+        "animals": "Dogs",
+        "price" : "5",
+        "rating" : "3.9",
+        "reviews" : 8,
+        "coordinates": {
+            "longitude": 14.30789,
+            "latitude": 40.83850
+        },
+        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "imageName": "preview_profile",
+        "id" : 1004
     }
+    
 ]
     

@@ -22,17 +22,17 @@ struct ListView: View {
     }
     var body: some View {
         NavigationStack{
-            VStack {
-                HStack{
-                    Text("Ordered by:")
-                    Spacer()
-                    Picker("Ordered by:", selection: $selectedItem) {
-                        ForEach(pickerOptions, id: \.self) { option in
-                            Text(option)
-                        }
+            ZStack{
+                VStack(alignment: .center) {
+                    HStack{
+                        Text("Filtered by:")
+                        Spacer()
+                        Picker("Ordered by:", selection: $selectedItem) {
+                            ForEach(pickerOptions, id: \.self) { option in
+                                Text(option)
+                            }
+                        }.pickerStyle(.automatic)
                     }
-                    
-                }
                 
                 .padding(.horizontal)
                 List {
@@ -48,11 +48,21 @@ struct ListView: View {
                 .searchable(text: $search)
                 .listStyle(PlainListStyle())
             }
-            //.padding()
+                .padding(.horizontal)
+                VStack{
+                    Spacer()
+                    VStack{
+                        Spacer()
+                        NavigationLink(destination: MapView(), label: {
+                            MapButtonView()
+                        })
+                    }
+                }
+            }
             .navigationTitle("Dashboard")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
-                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(),
+                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(user: modelData.user),
                                                                                label: {
                     Image("preview_profile")
                         .resizable()
@@ -62,6 +72,7 @@ struct ListView: View {
                 })}
                             
                 )}
+            .navigationBarBackButtonHidden()
         }
     }
 }
