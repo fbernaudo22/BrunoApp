@@ -12,21 +12,22 @@ struct ChatView: View {
     @State private var query = ""
     @State private var isPresented = false
     var body: some View {
-        NavigationView {
+        NavigationStack{
             List {
                 ForEach(filteredSitters) { sitter in
                     CardChatView(sitter: sitter)
                 }
             }
+            .searchable(text: $query)
             .listStyle(PlainListStyle())
             .navigationTitle("Chats")
             .navigationBarItems(trailing: Button(action: { isPresented = true }, label: {
                 Image(systemName: "square.and.pencil")
-                    .searchable(text: $query)
+                    //.searchable(text: $query)
             }))
         }
         .sheet(isPresented: $isPresented) {
-            HelloWorldView()
+            //HelloWorldView()
         }
     }
     

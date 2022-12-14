@@ -9,21 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
             ListView()
-                .tabItem {
-                    Label("Dashboard", systemImage: "doc.plaintext.fill")
-                }.tag(1)
-            MapView()
-                .tabItem {
-                    Label("Map", systemImage: "map.fill")
-                }.tag(2)
-            ChatView()
-                .tabItem {
-                    Label("Chat", systemImage: "message.fill")
-                }.tag(3)
-        }
-        .accentColor(Color.arancione)
     }
 }
 

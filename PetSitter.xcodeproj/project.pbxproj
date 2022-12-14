@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13160FF5294A174F00F4D585 /* NewColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13160FF4294A174F00F4D585 /* NewColor.swift */; };
 		68367CCE29478F9C00527397 /* PetSitterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CCD29478F9C00527397 /* PetSitterDetail.swift */; };
 		68367CD02947945400527397 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CCF2947945400527397 /* ProfileView.swift */; };
 		68367CD22948B9AF00527397 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68367CD12948B9AF00527397 /* User.swift */; };
@@ -29,7 +28,8 @@
 		68B6513E294517650070E140 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6513B294517650070E140 /* ListView.swift */; };
 		68B6513F294517650070E140 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6513C294517650070E140 /* MapView.swift */; };
 		68B65140294517650070E140 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6513D294517650070E140 /* ChatView.swift */; };
-		9A88E394294A163600A15647 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88E393294A163600A15647 /* HelloWorldView.swift */; };
+		85FFCAF9294A17F200AE63DF /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFCAF8294A17F200AE63DF /* MapButtonView.swift */; };
+		85FFCAFB294A22CE00AE63DF /* ListButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13160FF4294A174F00F4D585 /* NewColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewColor.swift; sourceTree = "<group>"; };
 		68367CCD29478F9C00527397 /* PetSitterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSitterDetail.swift; sourceTree = "<group>"; };
 		68367CCF2947945400527397 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		68367CD12948B9AF00527397 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -76,7 +75,8 @@
 		68B6513C294517650070E140 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		68B6513D294517650070E140 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		68B651412945FD300070E140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9A88E393294A163600A15647 /* HelloWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
+		85FFCAF8294A17F200AE63DF /* MapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
+		85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,6 @@
 				68B6512F2945174E0070E140 /* Data */,
 				68B650FF294516DC0070E140 /* PetSitterApp.swift */,
 				6854C01C29462D84007670A6 /* ContentView.swift */,
-				13160FF4294A174F00F4D585 /* NewColor.swift */,
 				68B6513A294517650070E140 /* Views */,
 				68B65103294516DD0070E140 /* Assets.xcassets */,
 				68B65105294516DD0070E140 /* Preview Content */,
@@ -184,11 +183,12 @@
 				68B6512D294517320070E140 /* PetSitterCard.swift */,
 				68B6513B294517650070E140 /* ListView.swift */,
 				68B6513C294517650070E140 /* MapView.swift */,
+				85FFCAF8294A17F200AE63DF /* MapButtonView.swift */,
+				85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */,
 				68B6513D294517650070E140 /* ChatView.swift */,
 				68367CCD29478F9C00527397 /* PetSitterDetail.swift */,
 				68367CCF2947945400527397 /* ProfileView.swift */,
 				68367CD32948BE0600527397 /* CardChatView.swift */,
-				9A88E393294A163600A15647 /* HelloWorldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,12 +326,11 @@
 			files = (
 				68B65100294516DC0070E140 /* PetSitterApp.swift in Sources */,
 				68367CD02947945400527397 /* ProfileView.swift in Sources */,
-				13160FF5294A174F00F4D585 /* NewColor.swift in Sources */,
 				68B651362945174E0070E140 /* placeholder.swift in Sources */,
+				85FFCAF9294A17F200AE63DF /* MapButtonView.swift in Sources */,
 				68367CCE29478F9C00527397 /* PetSitterDetail.swift in Sources */,
 				6854C01D29462D84007670A6 /* ContentView.swift in Sources */,
 				68B651352945174E0070E140 /* Petsitter.swift in Sources */,
-				9A88E394294A163600A15647 /* HelloWorldView.swift in Sources */,
 				68367CD22948B9AF00527397 /* User.swift in Sources */,
 				68B65140294517650070E140 /* ChatView.swift in Sources */,
 				68B651392945174E0070E140 /* LocationManager.swift in Sources */,
@@ -341,6 +340,7 @@
 				68B6513F294517650070E140 /* MapView.swift in Sources */,
 				68B651372945174E0070E140 /* ModelData.swift in Sources */,
 				68B6513E294517650070E140 /* ListView.swift in Sources */,
+				85FFCAFB294A22CE00AE63DF /* ListButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
