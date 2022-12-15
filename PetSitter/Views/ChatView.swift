@@ -26,11 +26,7 @@ struct ChatView: View {
             }))
         }
         .sheet(isPresented: $isPresented) {
-<<<<<<< HEAD
-            //HelloWorldView()
-=======
-           // HelloWorldView()
->>>>>>> f17782a76a7afb8d9f6403fbfda0d10c7490e374
+            // SomeView()
         }
     }
     
