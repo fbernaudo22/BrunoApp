@@ -31,6 +31,7 @@
 		68B65140294517650070E140 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6513D294517650070E140 /* ChatView.swift */; };
 		85FFCAF9294A17F200AE63DF /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFCAF8294A17F200AE63DF /* MapButtonView.swift */; };
 		85FFCAFB294A22CE00AE63DF /* ListButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */; };
+		9A02BCE0294B2D45000BD548 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BCDF294B2D45000BD548 /* StarsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		68B651412945FD300070E140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		85FFCAF8294A17F200AE63DF /* MapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
 		85FFCAFA294A22CE00AE63DF /* ListButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonView.swift; sourceTree = "<group>"; };
+		9A02BCDF294B2D45000BD548 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				68367CCD29478F9C00527397 /* PetSitterDetail.swift */,
 				68367CCF2947945400527397 /* ProfileView.swift */,
 				68367CD32948BE0600527397 /* CardChatView.swift */,
+				9A02BCDF294B2D45000BD548 /* StarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B65100294516DC0070E140 /* PetSitterApp.swift in Sources */,
+				9A02BCE0294B2D45000BD548 /* StarsView.swift in Sources */,
 				68367CD02947945400527397 /* ProfileView.swift in Sources */,
 				68B651362945174E0070E140 /* placeholder.swift in Sources */,
 				85FFCAF9294A17F200AE63DF /* MapButtonView.swift in Sources */,

@@ -25,9 +25,10 @@ struct PetSitterCard: View {
                     Text(sitter.name)
                         .font(.system(size: 17, weight: .bold))
                     HStack {
-                        Text("\(petSitter.giveStars(rating: sitter.rating))")
+                        //Text("\(petSitter.giveStars(rating: sitter.rating))")
+                            //.font(.system(size: 12, weight: .bold))
+                        StarsView(rating: Float(sitter.rating)!)
                             .font(.system(size: 12, weight: .bold))
-
                         Text("\(sitter.reviews)")
                             .font(.system(size: 12, weight: .regular))
                     }
