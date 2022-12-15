@@ -13,12 +13,27 @@ struct ListView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var search: String = ""
     @State private var selectedItem = "Name"
-    let pickerOptions = ["Name","Rating","Distance","Price"]
+    let pickerOptions = ["Name","Rating"]
+    var sortedSitters: [petSitter] {
+        if (selectedItem == "Name") {
+            return modelData.petsitters.sorted {
+                $0.name < $1.name
+            }
+        }
+        else if (selectedItem == "Reviews") {
+            return modelData.petsitters.sorted {
+                $0.reviews > $1.reviews
+            }
+        }
+        else {
+            return modelData.petsitters
+        }
+    }
     var filteredItems: [petSitter] {
         if search.isEmpty {
-            return modelData.petsitters}
+            return sortedSitters}
         else {
-            return modelData.petsitters.filter {$0.name.localizedCaseInsensitiveContains(search) || $0.rating.localizedCaseInsensitiveContains(search) || $0.animals.localizedCaseInsensitiveContains(search)}
+            return sortedSitters.filter {$0.name.localizedCaseInsensitiveContains(search) || $0.rating.localizedCaseInsensitiveContains(search) || $0.animals.localizedCaseInsensitiveContains(search)}
         }
     }
     var body: some View {
