@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    //@Binding var buttonIsActive: Bool
     @EnvironmentObject var modelData: ModelData
     @StateObject private var locationManager = LocationManager()
     var region: Binding<MKCoordinateRegion>? {

@@ -32,7 +32,7 @@ final class LocationManager: NSObject, ObservableObject {
             
            // let s = String(format: "%.0f", distance)
             
-            return Double(distance) ?? 10.5 // This value of 35.5 as placeholder is constantly displayed instead of the actual value
+            return Double(distance)
         }
 }
 

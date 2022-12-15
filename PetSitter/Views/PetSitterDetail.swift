@@ -58,8 +58,7 @@ struct PetSitterDetail: View {
                             Text(" \(sitter.animals)")
                             
                             Spacer()
-                            Button(action: {print("Button Tap")},
-                                   label: {
+                            NavigationLink(destination: ChatView(), label: {
                                 VStack {
                                     Text ("\(Image(systemName: "message.fill"))  Send a Message")
                                         .font(.system(size: 14, weight: .medium, design: .rounded))
@@ -72,6 +71,7 @@ struct PetSitterDetail: View {
                                         .stroke(Color.arancione, lineWidth: 2)
                                 )
                             })
+                                  
                         }
                         .padding(.horizontal)
                         
@@ -96,7 +96,7 @@ struct PetSitterDetail: View {
                             StarsView(rating: Float(sitter.rating)!)
                                 .font(.system(size: 12, weight: .bold))
                         }
-                        Text("Overall was good, but he looks a lot like chewbecca and i'm not into that furry thing")
+                        Text("Overall was good, but he looks a lot like chewbecca and i hate star wars")
                             .font(.system(size: 16))
                             .padding(.horizontal)
                         HStack {

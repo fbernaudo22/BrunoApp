@@ -23,7 +23,7 @@ struct ListView: View {
     }
     var body: some View {
         NavigationStack{
-            ZStack{
+            ZStack(alignment: .bottom){
                 VStack(alignment: .center) {
                     HStack{
                         Text("Filtered by:")
@@ -38,10 +38,12 @@ struct ListView: View {
                     .padding(.horizontal)
                     List {
                         ForEach(filteredItems) { sitter in
-                            NavigationLink(destination: PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))),label: {
+                            NavigationLink {
+                                PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
+                            } label: {
                                 PetSitterCard(sitter: sitter)
-                                
-                            })
+                            }
+                            .searchable(text: $search)
                         }
                     }
                     .searchable(text: $search)
@@ -49,26 +51,22 @@ struct ListView: View {
                 }
                 VStack{
                     Spacer()
-                    VStack{
-                        Spacer()
-                        NavigationLink(destination: MapView(), label: {
-                            MapButtonView()
-                        }).ignoresSafeArea()
-                    }
                 }
+                MapButtonView()
+                    .padding(.bottom, 30)
             }
+            .ignoresSafeArea(edges: .bottom)
+            .ignoresSafeArea(.keyboard)
             .navigationTitle("Dashboard")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
-                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(user: modelData.user),
-                                                                               label: {
+                ToolbarItem(placement: .automatic,   content: {NavigationLink( destination: ProfileView(user: modelData.user), label: {
                     Image("preview_profile")
                         .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
                         .frame(width: 50, height: 50)
                 })}
-                            
                 )}
             .navigationBarBackButtonHidden()
         }
