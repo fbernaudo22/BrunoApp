@@ -62,13 +62,13 @@ struct PetSitterDetail: View {
                                 VStack {
                                     Text ("\(Image(systemName: "message.fill"))  Send a Message")
                                         .font(.system(size: 14, weight: .medium, design: .rounded))
-                                        .foregroundColor(.orange)
+                                        .foregroundColor(Color.arancione)
                                         .padding(10)
                                 }
                                 .frame(width: geometry.size.width * 0.50)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.orange, lineWidth: 2)
+                                        .stroke(Color.arancione, lineWidth: 2)
                                 )
                             })
                         }
