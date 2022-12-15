@@ -26,7 +26,7 @@ struct ChatView: View {
             }))
         }
         .sheet(isPresented: $isPresented) {
-            HelloWorldView()
+            //HelloWorldView()
         }
     }
     
