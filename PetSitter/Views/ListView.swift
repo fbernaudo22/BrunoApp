@@ -54,7 +54,7 @@ struct ListView: View {
                         Spacer()
                         NavigationLink(destination: MapView(), label: {
                             MapButtonView()
-                        })
+                        }).ignoresSafeArea()
                     }
                 }
             }
