@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ListView: View {
+    @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var modelData: ModelData
     @State private var search: String = ""
     @State private var selectedItem = "Name"
@@ -33,21 +34,19 @@ struct ListView: View {
                             }
                         }.pickerStyle(.automatic)
                     }
-                
-                .padding(.horizontal)
-                List {
-                    ForEach(filteredItems) { sitter in
-                        NavigationLink {
-                            PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
-                        } label: {
-                            PetSitterCard(sitter: sitter)
+                    
+                    .padding(.horizontal)
+                    List {
+                        ForEach(filteredItems) { sitter in
+                            NavigationLink(destination: PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))),label: {
+                                PetSitterCard(sitter: sitter)
+                                
+                            })
                         }
-                        
                     }
+                    .searchable(text: $search)
+                    .listStyle(PlainListStyle())
                 }
-                .searchable(text: $search)
-                .listStyle(PlainListStyle())
-            }
                 VStack{
                     Spacer()
                     VStack{
@@ -78,8 +77,10 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static let modelData = ModelData()
+    static let locationManager = LocationManager()
     static var previews: some View {
         ListView()
             .environmentObject(ModelData())
+            .environmentObject(LocationManager())
     }
 }

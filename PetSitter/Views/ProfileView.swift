@@ -11,20 +11,22 @@ struct ProfileView: View {
     var user: User
     var body: some View {
         NavigationStack{
-            Form {
-                Section{
-                    VStack{
-                        Image(user.imageName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                        Text(user.username)
-                    }
-                }
+            VStack(spacing: 30 ){
+                Image(user.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 200)
+                    .clipShape(Circle())
+                    .shadow(radius: 2)
+                Text(user.username)
+                    .font(.title2.bold())
+            }
+                        Form{
                 Section("Account "){
                     NavigationLink("Messages", destination: ChatView())
                     NavigationLink("Notifications", destination: ChatView())
                     NavigationLink("Password", destination: ChatView())
+                    NavigationLink("Edit Profile", destination: ChatView())
                     
                 }
                 Section("Support"){
@@ -38,6 +40,8 @@ struct ProfileView: View {
                     NavigationLink("Delete account", destination: ChatView())
                 }
             }
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

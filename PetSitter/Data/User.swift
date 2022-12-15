@@ -22,7 +22,7 @@ struct User: Identifiable {
     init(){
         self.username = "DefaultUser"
         self.location = CLLocationCoordinate2D(latitude:40.83715 , longitude: 14.30616 )
-        self.imageName = "profile_preview"
+        self.imageName = "preview_profile"
     }
 }
 

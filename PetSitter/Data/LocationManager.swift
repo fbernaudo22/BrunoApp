@@ -23,6 +23,17 @@ final class LocationManager: NSObject, ObservableObject {
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
+    func distanceInKM(latitude: Double, longitude: Double) -> Double { //Here's the method I made to calculate an actual distance
+            
+            let houseCoordinates = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+            
+            let userCoordinates = CLLocation(latitude: location?.coordinate.latitude ?? 50, longitude: location?.coordinate.longitude ?? 30)
+            let distance = userCoordinates.distance(from: houseCoordinates) / 1000 //.distance comes in meters so /1000 is to have a KM value
+            
+           // let s = String(format: "%.0f", distance)
+            
+            return Double(distance) ?? 10.5 // This value of 35.5 as placeholder is constantly displayed instead of the actual value
+        }
 }
 
 extension LocationManager: CLLocationManagerDelegate {

@@ -23,6 +23,7 @@ struct petSitter: Identifiable, Codable, Hashable {
     var image: Image? {
         Image(imageName)
     }
+    var distance: Double
     var id: Int
     var locationCoordinates: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)

@@ -6,6 +6,7 @@
         "price" : "5",
         "rating" : "3.4",
         "reviews" : 87,
+        "distance" : 0.0,
         "coordinates": {
             "longitude": 14.30634,
             "latitude": 40.83635
@@ -21,6 +22,7 @@
         "price" : "5",
         "rating" : "3.2",
         "reviews" : 34,
+        "distance" : 0.0,
         "coordinates": {
             "longitude": 14.30736,
             "latitude": 40.83630
@@ -36,6 +38,7 @@
         "price" : "5",
         "rating" : "5.0",
         "reviews" : 21,
+        "distance" : 0.0,
         "coordinates": {
             "longitude": 14.30967,
             "latitude": 40.83359
@@ -51,6 +54,7 @@
         "price" : "5",
         "rating" : "3.9",
         "reviews" : 8,
+        "distance" : 0.0,
         "coordinates": {
             "longitude": 14.30789,
             "latitude": 40.83850
@@ -66,6 +70,7 @@
         "price" : "5",
         "rating" : "3.9",
         "reviews" : 8,
+        "distance" : 0.0,
         "coordinates": {
             "longitude": 14.33789,
             "latitude": 40.83890

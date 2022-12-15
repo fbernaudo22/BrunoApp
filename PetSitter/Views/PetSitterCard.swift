@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 
 struct PetSitterCard: View {
+    @EnvironmentObject var locationManager: LocationManager
     var sitter: petSitter
+    var distance: Double = 0.0
     var body: some View {
         //GeometryReader { geometry in
             HStack {
@@ -33,9 +36,9 @@ struct PetSitterCard: View {
                             .font(.system(size: 12, weight: .regular))
                     }
                     HStack{
-                        Text("1.6 km")
+                        Text(locationManager.distanceInKM(latitude: sitter.locationCoordinates.latitude, longitude: sitter.locationCoordinates.longitude), format: .number.precision(.significantDigits(4)))
                             .font(.system(size: 12, weight: .bold))
-                        Text("from you")
+                        Text("Km from you")
                             .font(.system(size: 12, weight: .regular))
                     }
                     HStack {
@@ -61,9 +64,11 @@ struct PetSitterCard: View {
 }
 
 struct PetSitterCard_Previews: PreviewProvider {
+    static let locationManager = LocationManager()
     static let modelData = ModelData()
     static var previews: some View {
-        PetSitterCard(sitter: modelData.petsitters[0])
+        PetSitterCard(sitter: modelData.petsitters[0], distance: 2.0)
             .environmentObject(ModelData())
+            .environmentObject(LocationManager())
     }
 }
