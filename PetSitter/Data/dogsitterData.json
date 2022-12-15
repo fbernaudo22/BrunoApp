@@ -11,7 +11,7 @@
             "latitude": 40.83635
         },
         "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
-        "imageName": "preview_profile",
+        "imageName": "Alberto",
         "id" : 1001
     },
     {
@@ -26,7 +26,7 @@
             "latitude": 40.83630
         },
         "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
-        "imageName": "preview_profile",
+        "imageName": "Stefano",
         "id" : 1002
     },
     {
@@ -41,7 +41,7 @@
             "latitude": 40.83359
         },
         "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
-        "imageName": "preview_profile",
+        "imageName": "Mavi",
         "id" : 1003
     },
     {
@@ -56,7 +56,7 @@
             "latitude": 40.83850
         },
         "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
-        "imageName": "preview_profile",
+        "imageName": "Pietro",
         "id" : 1004
     },
     {
@@ -71,7 +71,7 @@
             "latitude": 40.83890
         },
         "description": "Ciao! Costo tantissimo.",
-        "imageName": "preview_profile",
+        "imageName": "Francesco",
         "id" : 1005
     }
     
