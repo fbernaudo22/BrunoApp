@@ -73,6 +73,21 @@
         "description": "Ciao! Costo tantissimo.",
         "imageName": "Francesco",
         "id" : 1005
+    },
+    {
+        "name": "Olga Rossi",
+        "address": "Via protopisani, 35",
+        "animals": "Godzillas",
+        "price" : "5",
+        "rating" : "1.9",
+        "reviews" : 8,
+        "coordinates": {
+            "longitude": 14.33789,
+            "latitude": 40.83890
+        },
+        "description": "Ciao!",
+        "imageName": "Serena",
+        "id" : 1006
     }
     
 ]
