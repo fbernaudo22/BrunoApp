@@ -24,7 +24,7 @@ struct StarsView: View {
   }
 
   var body: some View {
-    HStack {
+    HStack (spacing: 0){
       ForEach(0..<fullCount) { _ in
          self.fullStar
        }
@@ -49,3 +49,10 @@ struct StarsView: View {
     Image(systemName: "star").foregroundColor(StarsView.COLOR)
   }
 }
+//struct StarsView_Previews: PreviewProvider {
+//    static let modelData = ModelData()
+//    static var previews: some View {
+//        StarsView(rating: 0)
+//            .environmentObject(ModelData())
+//    }
+//}
