@@ -60,19 +60,19 @@
         "id" : 1004
     },
     {
-        "name": "Carmine Fico",
-        "address": "Napoli",
+        "name": "Nicola Mennini",
+        "address": "Via protopisani, 35",
         "animals": "Dogs",
         "price" : "5",
         "rating" : "3.9",
         "reviews" : 8,
         "coordinates": {
-            "longitude": 14.30789,
-            "latitude": 40.83850
+            "longitude": 14.33789,
+            "latitude": 40.83890
         },
-        "description": "Ciao! Sono Gennaro e alleno cani da 34 anni.",
+        "description": "Ciao! Costo tantissimo.",
         "imageName": "preview_profile",
-        "id" : 1004
+        "id" : 1005
     }
     
 ]

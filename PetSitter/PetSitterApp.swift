@@ -14,6 +14,7 @@ struct PetSitterApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(ModelData())
+                .accentColor(.arancione)
         }
     }
 }
