@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct ListButtonView: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        NavigationLink(destination: ListView(), label: {
-            
-            Image(systemName: "list.bullet")
-                .font(.headline)
-            Text("List")
-                .fontWeight(.regular)
-                .font(.headline)
-        })
-        .navigationBarBackButtonHidden()
-        .buttonStyle(.borderless)
-        .clipShape(Rectangle())
-        .cornerRadius(1)
-        .padding(.horizontal, 20.0)
-        .padding(.vertical, 10.0)
-        .foregroundColor(.arancione)
-        .overlay(
-            RoundedRectangle(cornerRadius: 15)
-                .stroke(Color.arancione, lineWidth: 4)
-        )
-        .background(Color(UIColor.systemBackground))
-        .cornerRadius(15)
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "list.bullet")
+                    .font(.headline)
+                Text("List")
+                    .fontWeight(.regular)
+                    .font(.headline)
+            }
+            .navigationBarBackButtonHidden()
+            .buttonStyle(.borderless)
+            .clipShape(Rectangle())
+            .cornerRadius(1)
+            .padding(.horizontal, 20.0)
+            .padding(.vertical, 10.0)
+            .foregroundColor(.arancione)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.arancione, lineWidth: 4)
+            )
+            .background(Color(UIColor.systemBackground))
+            .cornerRadius(15)
+        }
     }
 }
 
