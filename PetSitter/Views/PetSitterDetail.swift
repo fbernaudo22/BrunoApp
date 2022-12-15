@@ -29,9 +29,8 @@ struct PetSitterDetail: View {
                                 .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .padding(.bottom, 1)
                             HStack{
-                                Text("Rating:")
-                                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                                Text("\(sitter.rating)")
+                                
+                                StarsView(rating: Float(sitter.rating)!)
                                 Text("\(sitter.reviews)")
                             }
                             .font(.system(size: 16, weight: .regular))
@@ -46,14 +45,16 @@ struct PetSitterDetail: View {
                     }
                     VStack(alignment: .leading){
                         Text ("About me")
-                            .font(.system(size: 22,weight: .semibold))
+                            .font(.system(size: 26,weight: .semibold))
                             .padding(.top)
                             .padding(.leading)
+                            .padding(.bottom,1)
                         Text(sitter.description)
                             .font(.system(size: 16, weight: .regular))
                             .padding(.horizontal)
                         HStack (spacing: 2) {
                             Text("For:")
+                                .fontWeight(.semibold)
                             Text(" \(sitter.animals)")
                             
                             Spacer()
@@ -62,13 +63,13 @@ struct PetSitterDetail: View {
                                 VStack {
                                     Text ("\(Image(systemName: "message.fill"))  Send a Message")
                                         .font(.system(size: 14, weight: .medium, design: .rounded))
-                                        .foregroundColor(.orange)
+                                        .foregroundColor(Color.arancione)
                                         .padding(10)
                                 }
                                 .frame(width: geometry.size.width * 0.50)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.orange, lineWidth: 2)
+                                        .stroke(Color.arancione, lineWidth: 2)
                                 )
                             })
                         }
@@ -80,6 +81,40 @@ struct PetSitterDetail: View {
                         .cornerRadius(26)
                         .padding()
                         .frame(height: geometry.size.height * 0.5)
+                        //reviews
+                        HStack {
+                            Text("Reviews")
+                                .font(.system(size: 26,weight: .semibold))
+                            .padding(.horizontal)
+                        }
+                        
+                        HStack {
+                            Text("Giggin o' Bibitar")
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding(.horizontal)
+                                .padding(.top,1)
+                            StarsView(rating: Float(sitter.rating)!)
+                                .font(.system(size: 12, weight: .bold))
+                        }
+                        Text("Overall was good, but he looks a lot like chewbecca and i'm not into that furry thing")
+                            .font(.system(size: 16))
+                            .padding(.horizontal)
+                        HStack {
+                            Text("Ciro the Immortal")
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding(.horizontal)
+                                .padding(.top,1)
+                            StarsView(rating: Float(sitter.rating)!)
+                                .font(.system(size: 12, weight: .bold))
+                        }
+                        Text("Good")
+                            .font(.system(size: 16))
+                            .padding(.horizontal)
+                        //fine reviews
+                        
+                        
+                        
+                        
                         
                     }
                 }
