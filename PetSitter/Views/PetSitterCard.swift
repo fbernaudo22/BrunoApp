@@ -28,22 +28,22 @@ struct PetSitterCard: View {
                         //Text("\(petSitter.giveStars(rating: sitter.rating))")
                             //.font(.system(size: 12, weight: .bold))
                         StarsView(rating: Float(sitter.rating)!)
-                            .font(.system(size: 12, weight: .bold))
+                            .font(.system(size: 14, weight: .bold))
                         Text("\(sitter.reviews)")
-                            .font(.system(size: 12, weight: .regular))
+                            .font(.system(size: 14, weight: .regular))
                     }
-                    HStack{
+                    HStack(spacing: 4){
                         Text("1.6 km")
-                            .font(.system(size: 12, weight: .bold))
+                            .font(.system(size: 14, weight: .bold))
                         Text("from you")
-                            .font(.system(size: 12, weight: .regular))
+                            .font(.system(size: 14, weight: .regular))
                     }
-                    HStack {
+                    HStack (spacing: 4) {
                         Text("For:")
-                            .font(.system(size: 12, weight: .bold))
+                            .font(.system(size: 14, weight: .bold))
 
                         Text("\(sitter.animals)")
-                            .font(.system(size: 12, weight: .regular))
+                            .font(.system(size: 14, weight: .regular))
 
                     }
                     
