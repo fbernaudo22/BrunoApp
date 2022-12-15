@@ -20,9 +20,9 @@ struct ListView: View {
                 $0.name < $1.name
             }
         }
-        else if (selectedItem == "Reviews") {
+        else if (selectedItem == "Rating") {
             return modelData.petsitters.sorted {
-                $0.reviews > $1.reviews
+                $0.rating > $1.rating
             }
         }
         else {

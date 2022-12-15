@@ -24,7 +24,7 @@ struct PetSitterDetail: View {
                             .clipShape(Circle())
                             .padding(.leading)
                         Spacer()
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading, spacing:5){
                             Text(sitter.name)
                                 .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .padding(.bottom, 1)
@@ -35,11 +35,8 @@ struct PetSitterDetail: View {
                             }
                             .font(.system(size: 16, weight: .regular))
                             
-                            HStack (spacing: 4) {
-                                Text("1.6 km")
-                                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                                Text("from you")
-                            }
+                                Text("Price: \(sitter.price) Euro/hour")
+                                  
                         }
                         Spacer()
                     }
@@ -127,10 +124,12 @@ struct PetSitterDetail: View {
 
 
 struct PetSitterDetail_Previews: PreviewProvider {
+    static var loacationManager = LocationManager()
     static let modelData = ModelData()
     static var previews: some View {
         PetSitterDetail(sitter: modelData.petsitters[0],region: MKCoordinateRegion(center: modelData.petsitters[0].locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
             .environmentObject(ModelData())
+            .environmentObject(LocationManager())
     }
 }
 
