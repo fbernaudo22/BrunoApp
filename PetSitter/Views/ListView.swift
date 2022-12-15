@@ -48,7 +48,6 @@ struct ListView: View {
                 .searchable(text: $search)
                 .listStyle(PlainListStyle())
             }
-                .padding(.horizontal)
                 VStack{
                     Spacer()
                     VStack{
