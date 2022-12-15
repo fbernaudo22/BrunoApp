@@ -14,61 +14,79 @@ struct PetSitterDetail: View {
     @State var region: MKCoordinateRegion
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                HStack{
-                    Spacer()
-                    Image(sitter.imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geometry.size.width * 0.40, height: geometry.size.height * 0.20)
-                        .clipShape(Circle())
-                    Spacer()
-                    VStack(alignment: .leading, spacing: 5){
-                        Text(sitter.name)
-                            .font(.title)
-                            .fontWeight(.semibold)
-                        Text("Rating: \(sitter.rating)")
-                        Text("\(sitter.reviews) Reviews")
-                    }
-                    Spacer()
-                }
-                VStack{
-                    Button(action: {print("Button Tap")},
-                           label: {
-                        /*Text ("Send a Message")
-                         .font(.system(size: 14, weight: .medium, design: .rounded))
-                         .foregroundColor(.orange)
-                         .padding(10)
-                         //.cornerRadius(10)
-                         .frame(width: geometry.size.width * 0.50)
-                         .border(Color.orange, width: 2)
-                         .cornerRadius(10)*/
-                        VStack {
-                            Text ("Send a Message")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.orange)
-                                .padding(10)
+            ScrollView {
+                VStack {
+                    HStack{
+                        Image(sitter.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 120)
+                            .clipShape(Circle())
+                            .padding(.leading)
+                        Spacer()
+                        VStack(alignment: .leading){
+                            Text(sitter.name)
+                                .font(.system(size: 28, weight: .bold, design: .rounded))
+                                .padding(.bottom, 1)
+                            HStack{
+                                Text("Rating:")
+                                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                Text("\(sitter.rating)")
+                                Text("\(sitter.reviews)")
+                            }
+                            .font(.system(size: 16, weight: .regular))
+                            
+                            HStack (spacing: 4) {
+                                Text("1.6 km")
+                                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                Text("from you")
+                            }
                         }
-                        .frame(width: geometry.size.width * 0.50)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.orange, lineWidth: 2)
-                        )
-                    })
-                    Text ("About me")
-                        .fontWeight(.bold)
-                        .font(.title2)
-                    Text(sitter.description)
-                        .padding()
-                    HStack {
-                        Text("For: \(sitter.animals)")
+                        Spacer()
                     }
-                    Map(coordinateRegion: $region, annotationItems: modelData.petsitters) {sit in
-                        MapMarker(coordinate: sitter.locationCoordinates)
+                    VStack(alignment: .leading){
+                        Text ("About me")
+                            .font(.system(size: 22,weight: .semibold))
+                            .padding(.top)
+                            .padding(.leading)
+                        Text(sitter.description)
+                            .font(.system(size: 16, weight: .regular))
+                            .padding(.horizontal)
+                        HStack (spacing: 2) {
+                            Text("For:")
+                            Text(" \(sitter.animals)")
+                            
+                            Spacer()
+                            Button(action: {print("Button Tap")},
+                                   label: {
+                                VStack {
+                                    Text ("\(Image(systemName: "message.fill"))  Send a Message")
+                                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                                        .foregroundColor(.orange)
+                                        .padding(10)
+                                }
+                                .frame(width: geometry.size.width * 0.50)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.orange, lineWidth: 2)
+                                )
+                            })
+                        }
+                        .padding(.horizontal)
+                        
+                        Map(coordinateRegion: $region, annotationItems: modelData.petsitters) {sit in
+                            MapMarker(coordinate: sitter.locationCoordinates)
+                        }
+                        .cornerRadius(26)
+                        .padding()
+                        .frame(height: geometry.size.height * 0.5)
+                        
                     }
                 }
             }
+            .navigationBarTitle("", displayMode: .inline)
         }
+        .font(.system(size: 16, weight: .regular, design: .rounded))
     }
 }
 
