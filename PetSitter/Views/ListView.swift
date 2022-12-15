@@ -33,22 +33,21 @@ struct ListView: View {
                             }
                         }.pickerStyle(.automatic)
                     }
-                    
-                    .padding(.horizontal)
-                    List {
-                        ForEach(filteredItems) { sitter in
-                            NavigationLink {
-                                PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
-                            } label: {
-                                PetSitterCard(sitter: sitter)
-                            }
-                            
-                        }.navigationBarBackButtonHidden()
-                    }
-                    .searchable(text: $search)
-                    .listStyle(PlainListStyle())
-                }
+                
                 .padding(.horizontal)
+                List {
+                    ForEach(filteredItems) { sitter in
+                        NavigationLink {
+                            PetSitterDetail(sitter: sitter, region: MKCoordinateRegion(center: sitter.locationCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
+                        } label: {
+                            PetSitterCard(sitter: sitter)
+                        }
+                        
+                    }
+                }
+                .searchable(text: $search)
+                .listStyle(PlainListStyle())
+            }
                 VStack{
                     Spacer()
                     VStack{
