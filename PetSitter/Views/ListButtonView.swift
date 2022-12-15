@@ -23,12 +23,12 @@ struct ListButtonView: View {
         .cornerRadius(1)
         .padding(.horizontal, 20.0)
         .padding(.vertical, 10.0)
-        .foregroundColor(.orange)
+        .foregroundColor(.arancione)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(.orange, lineWidth: 4)
+                .stroke(Color.arancione, lineWidth: 4)
         )
-        .background(.white)
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(15)
     }
 }
